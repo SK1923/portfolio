@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@use '../global';
+
+.main {
+  min-height: 100vh;
+  background-color: global.$color-black;  
+  overflow: hidden;
+  color: rgba(255, 255, 255, .6);
+  $font: 14px;
+  @include global.resFont( 12px, $font );
+  @include global.font-resProperty( $font, 21px, 400, 100);
+}

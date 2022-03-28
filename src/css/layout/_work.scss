@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+@use "sass:map";
+
+@use '../global';
+
+.work {
+  padding: calc(#{global.x-calc-percent(60px)} + 28px) 0 0;
+  max-width: map.get(global.$mq-breakpoints, xlarge);
+  margin: 0 auto;
+  @include global.mq(medium, min, true) {
+    padding: global.x-calc-percent(60px) 0 0;
+  }
+
+  &_subttl {
+    margin: global.x-calc-percent(20px) 0 0;
+  }
+}
+
+.search {
+  width: 100%;
+  $font: 14px;
+  @include global.resFont( 12px, $font );
+  @include global.font-resProperty( $font, 14px, 400, 100);
+
+  &_form {
+    padding: global.x-calc-percent(30px) 0;
+  }
+
+  &_window {
+    padding: global.x-calc-percent(20px) global.x-calc-percent(50px) global.x-calc-percent(20px) global.x-calc-percent(10px);
+    background-color: global.$color-gray;
+    border: 2px solid #000;
+    color: global.$color-black;
+  
+    &::placeholder {
+      color: global.$color-black;
+    }
+
+    &:focus-visible{
+      outline: none;
+      background-color: global.$color-white;
+    }
+  }
+
+  &_select {
+    display: block;
+    padding: global.x-calc-percent(30px) 0 0;
+
+    select {
+      display: block;
+      padding: global.x-calc-percent(20px) global.x-calc-percent(50px) global.x-calc-percent(20px) global.x-calc-percent(10px);
+      margin: global.x-calc-percent(10px) 0 0;
+      background-color: global.$color-gray;
+      border: 2px solid #000;
+      color: global.$color-black;
+         
+      &:focus-visible{
+        outline: none;
+        background-color: global.$color-white;
+      }
+    }
+  }
+
+  @include global.mq(small, min, true) {
+  
+    &_form {
+      padding: global.x-calc-percent(20px) 0;
+      display: flex;
+      align-items: flex-end;
+    }
+  
+    &_window {
+      width: 20em;
+      padding: 10px 50px 10px 10px;
+      background-color: global.$color-gray;
+      border: 2px solid #000;
+      color: global.$color-black;
+    
+      &::placeholder {
+        color: global.$color-black;
+      }
+  
+      &:focus-visible{
+        outline: none;
+        background-color: global.$color-white;
+      }
+    }
+  
+    &_select {
+      display: block;
+      padding: 0;
+      margin: 0 0 0 2em;
+  
+      select {
+        display: block;
+        padding: 10px 50px 10px 10px;
+        margin: 10px 0 0 0;
+        height: 42.4px;
+        background-color: global.$color-gray;
+        border: 2px solid global.$color-base;
+        color: global.$color-black;
+           
+        &:focus-visible{
+          outline: none;
+          background-color: global.$color-white;
+        }
+      }
+    }
+  }
+}
+
+.items {
+  &_cat {
+    padding: global.x-calc-percent(20px) 0;
+  }
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 global.x-calc-percent(30px) global.x-calc-percent(-36px);
+  }
+  &_box {
+    margin: global.x-calc-percent(30px) 0 0 global.x-calc-percent(36px);
+    position: relative;
+    padding: global.x-calc-percent(30px) global.x-calc-percent(30px) global.x-calc-percent(100px);
+    width: 45%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      transition: all .3s linear;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+      width: 50%;
+      height: 50%;
+      transition: all .3s linear;
+      transition-delay: .3s;
+    }
+
+    &.isShow {
+      &::before {
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: global.$color-black;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-name {
+      $font: 18px;
+      @include global.resFont( 14px, $font );
+      @include global.font-resProperty( $font, 24px, 400, 100);
+
+    }
+    &-rec {
+      position: absolute;
+      bottom: global.x-calc-percent(40px);
+      right: global.x-calc-percent(20px);
+      $font: 100px;
+      @include global.resFont( 72px, $font );
+      @include global.font-resProperty( $font, 100px, 400, 100);
+      opacity: .2;
+    }
+    &-text {
+      padding: global.x-calc-percent(30px) 0 0;
+    }
+  }
+  @include global.mq(small, min, true) {
+
+    &_cat {
+      padding: 20px 0;
+    }
+    &_wrap {
+      margin: 0 0 30px -36px;
+    }
+    &_box {
+      margin: 20px 0 0 30px;
+      padding: 20px 20px 40px;
+      &-rec {
+        bottom: 10px;
+        right: 10px;
+      }
+      &-text {
+        padding: 10px 0 0;
+      }
+    }
+  }
+  @include global.mq(large, min, true) {
+    &_box {
+      width: calc(100% / 3 - 60px);
+    }
+  }
+}

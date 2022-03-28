@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+@use "sass:map";
+
+@use '../global';
+
+.about {
+  padding: calc(#{global.x-calc-percent(60px)} + 28px) 0 0;
+  max-width: map.get(global.$mq-breakpoints, xlarge);
+  margin: 0 auto;
+  @include global.mq(medium, min, true) {
+    padding: global.x-calc-percent(60px) 0 0;
+  }
+
+  .inner {
+    transition: all 1s linear;
+    &.fadeout {
+      transform: scale(-10%);
+    }
+  }
+
+  h2 {
+    margin: global.x-calc-percent(80px) 0  global.x-calc-percent(100px);
+    @include global.mq(xsmall, min, true) {
+      margin: 0 0  global.x-calc-percent(30px);
+    }
+  }
+
+  &_box {
+    margin: global.x-calc-percent(60px) 0;
+
+    h3 {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      margin: 0 0 global.x-calc-percent(20px);
+      padding: 0 0 global.x-calc-percent(10px);
+      background: linear-gradient( transparent 95% , #fff 95%);
+      $font: 24px;
+      @include global.resFont( 20px, $font );
+      @include global.font-resProperty( $font, 24px, 400, 100);
+      
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: all .3s .1s linear;
+      }
+    }
+
+    p {
+      text-align: justify;
+      display: none;
+    }
+    
+    @include global.mq(medium, min, true) {
+      margin: global.x-calc-percent(20px) 0;
+
+      h3 {
+        margin: 0 0 global.x-calc-percent(10px);   
+      }
+  
+      p {
+        text-align: justify;
+      }
+  
+    }
+  }
+}
+
+.about.show{
+  .about {
+    &_box {  
+      h3 {        
+        span {
+          transform: translateX(0);
+        }
+      }
+    }
+  }  
+}

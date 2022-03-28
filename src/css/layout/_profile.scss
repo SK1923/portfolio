@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+@use "sass:map";
+
+@use '../global';
+
+.profile {
+  padding: calc(#{global.x-calc-percent(60px)} + 28px) 0 0;
+  max-width: map.get(global.$mq-breakpoints, xlarge);
+  margin: 0 auto;
+  @include global.mq(medium, min, true) {
+    padding: global.x-calc-percent(60px) 0 0;
+  }
+
+  &_skill-wrap {
+    @include global.mq(medium, min, true) {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
+
+  h2 {
+    margin: global.x-calc-percent(80px) 0  global.x-calc-percent(100px);
+    @include global.mq(xsmall, min, true) {
+      margin: 0 0  global.x-calc-percent(30px);
+    }
+  }
+
+  &_box {
+    margin: global.x-calc-percent(60px) 0;
+    padding: global.x-calc-percent(30px) global.x-calc-percent(30px) global.x-calc-percent(40px);
+    border: 1px solid #fff;
+    border-radius: 10px;
+
+    h3 {
+      margin: 0 0 global.x-calc-percent(30px);
+      $font: 24px;
+      @include global.resFont( 20px, $font );
+      @include global.font-resProperty( $font, 24px, 400, 100);      
+    }
+
+    p {
+      margin: 0 0 global.x-calc-percent(10px);
+      text-align: justify;
+
+      &:nth-last-of-type(1) {
+        margin: 0;
+      }
+    }
+
+    &.html {
+      h3 {
+        opacity: 0;
+      }
+      p {
+        opacity: 0;
+      }
+    }
+    &.css {
+      h3 {
+        opacity: 0;
+      }
+      p {
+        opacity: 0;
+      }
+    }
+    &.js {
+      h3 {
+        opacity: 0;
+      }
+      p {
+        opacity: 0;
+      }
+    }
+    &.design {
+      h3 {
+        opacity: 0;
+      }
+      p {
+        opacity: 0;
+      }
+    }
+    &.others {
+      h3 {
+        opacity: 0;
+      }
+      p {
+        opacity: 0;
+      }
+    }
+    
+    @include global.mq(medium, min, true) {
+      border-radius: 0;
+      margin: 0;
+      padding: 10px;
+      position: relative;
+
+      h3 {
+        margin: 0 0 global.x-calc-percent(10px);   
+      }
+  
+      p {
+        margin: 0 0 global.x-calc-percent(5px);
+        text-align: left;
+      }
+
+      &.html {
+        grid-row: 1 / 3;
+        grid-column: 4/ 6;
+        h3 {
+          opacity: 0;
+        }
+        p {
+          opacity: 0;
+        }
+      }
+      &.css {
+        grid-row: 3 / 5;
+        grid-column: 7 / 10;
+        h3 {
+          opacity: 0;
+        }
+        p {
+          opacity: 0;
+        }
+      }
+      &.js {
+        grid-row: 1 / 3;
+        grid-column: 6 / 10;
+        h3 {
+          opacity: 0;
+        }
+        p {
+          opacity: 0;
+        }
+      }
+      &.design {
+        grid-row: 5 / 7;
+        grid-column: 1 / 7;
+        h3 {
+          opacity: 0;
+        }
+        p {
+          opacity: 0;
+        }
+      }
+      &.others {
+        grid-row: 3 / 5;
+        grid-column: 1 / 4;
+        h3 {
+          opacity: 0;
+        }
+        p {
+          opacity: 0;
+        }
+      }
+  
+    }
+  }
+}
+
+
+.profile.show {
+  .profile_skill-wrap {
+    @include global.mq(medium, min, true) {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 0%;
+        background: linear-gradient(to bottom left, transparent 49.9% , #{global.$color-lineGray} 49.9% 50.1%,  transparent 50.1%);
+        animation: line 3s linear 1s 1 forwards;
+      }
+    }
+  }
+
+  .profile_box {
+    &.html {
+      h3 {
+        opacity: 0;
+        animation: textfadein 1s linear 1s 1 forwards;
+      }
+      p {
+        opacity: 0;
+        animation: textfadein 1s linear 1.5s 1 forwards;
+      }
+    }
+    &.css {
+      h3 {
+        opacity: 0;
+        animation: textfadein 1s linear 1.5s 1 forwards;
+      }
+      p {
+        opacity: 0;
+        animation: textfadein 1s linear 2s 1 forwards;
+      }
+    }
+    &.js {
+      h3 {
+        opacity: 0;
+        animation: textfadein 1s linear 2s 1 forwards;
+      }
+      p {
+        opacity: 0;
+        animation: textfadein 1s linear 2.5s 1 forwards;
+      }
+    }
+    &.design {
+      h3 {
+        opacity: 0;
+        animation: textfadein 1s linear 2.5s 1 forwards;
+      }
+      p {
+        opacity: 0;
+        animation: textfadein 1s linear 3s 1 forwards;
+      }
+    }
+    &.others {
+      h3 {
+        opacity: 0;
+        animation: textfadein 1s linear 3s 1 forwards;
+      }
+      p {
+        animation: textfadein 1s linear 3.5s 1 forwards;
+      }
+    }
+    
+    @include global.mq(medium, min, true) {
+      &.html {
+        h3 {
+          animation: textfadein 1s linear 1s 1 forwards;
+        }
+        p {
+          animation: textfadein 1s linear 1.5s 1 forwards;
+        }
+      }
+      &.css {
+        h3 {
+          animation: textfadein 1s linear 2s 1 forwards;
+        }
+        p {
+          animation: textfadein 1s linear 2.5s 1 forwards;
+        }
+      }
+      &.js {
+        h3 {
+          animation: textfadein 1s linear 1s 1 forwards;
+        }
+        p {
+          animation: textfadein 1s linear 1.5s 1 forwards;
+        }
+      }
+      &.design {
+        h3 {
+          animation: textfadein 1s linear 3s 1 forwards;
+        }
+        p {
+          animation: textfadein 1s linear 3.5s 1 forwards;
+        }
+      }
+      &.others {
+        h3 {
+          animation: textfadein 1s linear 2s 1 forwards;
+        }
+        p {
+          animation: textfadein 1s linear 2.5s 1 forwards;
+        }
+      }
+  
+    }
+  }
+}
+
+@keyframes line {
+  0%{
+    width: 0%;
+    height: 0%;
+    }
+  
+  100%{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes textfadein {
+  0%{
+    opacity: 0;
+    }
+  
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes lineShow {
+  0%{
+    width: 100%;
+    height:100%;
+  }
+
+  100%{
+    width: 0%;
+    height: 0%;
+  }
+}
+    

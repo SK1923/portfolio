@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+$base_width: 750px;
+
+// Break points
+$mq-breakpoints: (
+    'xsmall': 480px,
+    'small': 640px,
+    'medium': 750px,
+    'large': 990px,
+    'xlarge': 1290px
+);
+
+// color
+$color-base: #000;
+$color-black: #232323;
+$color-gray: #d8d8d8;
+$color-textGray: rgba(255, 255, 255, .6);
+$color-lineGray: rgba(255, 255, 255, .2);
+$color-white: #f0eaea;
