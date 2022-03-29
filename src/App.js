@@ -15,7 +15,7 @@ function App() {
       <Header />
 
       <main className='main'>
-        <Routes>
+        <Routes basename={process.env.PUBLIC_URL}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/profile" element={<Profile />} />

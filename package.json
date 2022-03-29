@@ -1,6 +1,7 @@
 {
   "name": "first_poortoforio",
   "version": "0.1.0",
+  "homepage": "https://sk1923.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -13,6 +14,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "deploy": "npm run build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "sass": "^1.49.9"
   }
 }
