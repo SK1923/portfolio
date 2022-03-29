@@ -95,7 +95,7 @@ const ItemsBox = ({ countryName, filterText }) => {
   const lists = useContext(list);
   let recoPoint = useContext(reccomendPoint);
 
-  if (recoPoint == '') {
+  if (recoPoint === '') {
     recoPoint = 0;
   }
 
@@ -175,7 +175,7 @@ const ItemsBox = ({ countryName, filterText }) => {
         let filterNum = 0;
         for (let i = 0; i < item.name.length; i++) {
           let text = item.name;
-          if (text.indexOf(filterText) != -1) {
+          if (text.indexOf(filterText) !== -1) {
             numText = 1;
           }
           filterNum += numText;
@@ -191,6 +191,7 @@ const ItemsBox = ({ countryName, filterText }) => {
             </div>
           )
         }
+        return void(0);
       })}
     </div>
   )
@@ -207,7 +208,7 @@ const ItemsArea = ({ listCatArr, selectId, selectRec, filterText }) => {
     } else if (selectId === value) {
       return value
     } else {
-      return;
+      return void(0);
     }
   });
 
@@ -217,6 +218,7 @@ const ItemsArea = ({ listCatArr, selectId, selectRec, filterText }) => {
       if (v.id === value) {
         return v
       }
+      return void(0);
     })
 
     catRecArr.map((value) => {
@@ -225,7 +227,7 @@ const ItemsArea = ({ listCatArr, selectId, selectRec, filterText }) => {
       let filterNum = 0;
       for (let i = 0; i < value.name.length; i++) {
         let text = value.name;
-        if (text.indexOf(filterText) != -1) {
+        if (text.indexOf(filterText) !== -1) {
           numText = 1;
         }
         filterNum += numText;
@@ -234,12 +236,14 @@ const ItemsArea = ({ listCatArr, selectId, selectRec, filterText }) => {
       if (value.recommend >= selectRec && filterNum > 0) {
         recFlag = true
       }
+      return void(0);
     });
 
     if (recFlag) {
       recFlag = false;
       return value
     }
+    return void(0);
   });
 
   // rec & cat list
@@ -247,13 +251,14 @@ const ItemsArea = ({ listCatArr, selectId, selectRec, filterText }) => {
     if (value === listItemsCat[i]) {
       return value
     }
+    return void(0);
   })
 
   return (
     <div className='items'>
 
       {listItemCatRec.map((value, i) => {
-        if (value != undefined) {
+        if (value !== undefined) {
           return (
             <div key={i} className='items_cat'>
               <h3>{value}</h3>
@@ -263,6 +268,7 @@ const ItemsArea = ({ listCatArr, selectId, selectRec, filterText }) => {
             </div>
           )
         }
+        return void(0);
       })}
 
     </div>
@@ -304,7 +310,6 @@ const SearchArea = ({ listCatArr, listRecoArr, filterText, handleChangeCountry, 
 const Table = () => {
   const lists = useContext(list);
 
-  const [isShow, setIsShow] = useState(false);
   const [filterText, setFilterText] = useState('');
   const [selectId, setSelectId] = useState('');
   const [selectRec, setSelectRec] = useState('');
