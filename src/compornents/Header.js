@@ -38,7 +38,7 @@ function Header() {
     <header className='header'>
 
       <div className='header_wrap'>
-        <h1><Link to="/">Portfolio</Link></h1>
+        <h1><Link className='js-open' to="/">Portfolio</Link></h1>
         <div className='toggle'>
           <span></span>
           <span></span>
