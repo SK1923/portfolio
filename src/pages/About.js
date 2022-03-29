@@ -44,7 +44,7 @@ class About extends React.Component {
     function typing(element, sentence, i) {
       return new Promise((resolve, reject) => {
         [...sentence].forEach((character, index) => {
-          if (character != '.') {
+          if (character !== '.') {
             setTimeout(() => {
               try {
                 document.getElementsByClassName(element)[i].innerHTML += character;
@@ -77,13 +77,12 @@ class About extends React.Component {
       }
       try {
         for (let i = 0; i < typeElm.length; ++i) {
-        const result = await typing('about_text', textAry[i], i);
+        await typing('about_text', textAry[i], i);
       }
       } catch (err) {
         throw err;
       }
     }
-    console.log((durationTime * 20) - 2000)
 
     setTimeout(() => {
       this.setState({ isShow: true });
