@@ -38,7 +38,7 @@ function Header() {
     <header className='header'>
 
       <div className='header_wrap'>
-        <h1><Link to="/">Portfolio</Link></h1>
+        <h1><Link className='js-open' to="/">Portfolio</Link></h1>
         <div className='toggle'>
           <span></span>
           <span></span>
@@ -47,7 +47,7 @@ function Header() {
         <nav className='header_nav'>
           <ul className='header_list'>
             <li className='header_item'>
-              <Link className='js-open' to="/">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className='header_item'>
               <Link to="/about">About</Link>
