@@ -28,13 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function App() {
+window.addEventListener('DOMContentLoaded', () => {
+  const elmHome = document.getElementsByClassName('js-open')
+  elmHome[0].click();
+});
+function Header() {
 
   return (
     <header className='header'>
 
       <div className='header_wrap'>
-        <h1><Link to="/">Portfolio</Link></h1>
+        <h1><Link className='js-open' to="/">Portfolio</Link></h1>
         <div className='toggle'>
           <span></span>
           <span></span>
@@ -43,7 +47,7 @@ function App() {
         <nav className='header_nav'>
           <ul className='header_list'>
             <li className='header_item'>
-              <Link to="/">Home</Link>
+              <Link className='js-open' to="/">Home</Link>
             </li>
             <li className='header_item'>
               <Link to="/about">About</Link>
@@ -62,4 +66,4 @@ function App() {
   );
 }
 
-export default App;
+export default Header;

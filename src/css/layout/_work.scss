@@ -15,6 +15,9 @@
   &_subttl {
     margin: global.x-calc-percent(20px) 0 0;
   }
+  .inner {
+    padding-bottom: global.x-calc-percent(80px);
+  }
 }
 
 .search {
