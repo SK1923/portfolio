@@ -10,7 +10,7 @@ const profileLists = [
   {
     id: 'css',
     title: "CSS",
-    text: ['over 3 years', 'I use also sass.']
+    text: ['over 3 years', 'I use also sass in most cases']
   },
   {
     id: 'js',
@@ -20,12 +20,12 @@ const profileLists = [
   {
     id: 'design',
     title: "about Design",
-    text: ['over 3 years - Photoshop/illastrator/XD', 'I am not good at maiking design by Photoshop, illastrator, XD and figma.']
+    text: ['over 3 years - Photoshop/illastrator', 'I sometimes use XD, figma.', 'I am not good at maiking design by Photoshop and illastrator.']
   },
   {
     id: 'others',
     title: "others",
-    text: ['java/php/Linux/gulp...', 'I have touched ... When I made LP, I have used the dev of the service.']
+    text: ['java/php/gulp/XD/figma...', 'I have touched ... When I made LP, I have used the dev of the service.']
   },
 ];
 
