@@ -8,7 +8,7 @@ const countryList = [
   {
     id: 'Europa',
     name: 'イタリア',
-    recommend: 90,
+    recommend: 94,
     text: '食べ物も美味しいです。ミラノはメンズファッションのお買い物ならパリより揃ってると個人的には思っています。',
   },
   {
@@ -19,39 +19,51 @@ const countryList = [
   },
   {
     id: 'Europa',
+    name: 'フランス',
+    recommend: 78,
+    text: 'パリのフランスパンは異常に美味しいです。新幹線に乗る際は分刻みで変動するので、大体の相場を掴む、もしくはその辺の人にいくら位か聞くと高値で乗らなくて済みます。',
+  },
+  {
+    id: 'Europa',
     name: 'クロアチア',
-    recommend: 70,
+    recommend: 72,
     text: 'お洒落なカフェやバルが多かったので、好きな人は好きだと思います。恐らく大多数の人がセルビアにいい印象が全くなく、これから行くと伝えるともの凄い心配してくれます。',
   },
   {
     id: 'Europa',
     name: 'セルビア',
-    recommend: 70,
+    recommend: 72,
     text: '意外にご飯も美味しいし、地元の人も困ってる時にはめちゃ優しくなります。ベオグラードはナイトライフが充実していて、好きな人には面白いかもです。',
   },
   {
     id: 'North America',
     name: 'アメリカ',
-    recommend: 80,
+    recommend: 83,
     text: 'LAとサンフランシスコしかないです。LA出身のミュージシャンが好きで若い頃は行っていました。',
   },
   {
     id: 'North America',
     name: 'メキシコ',
-    recommend: 90,
+    recommend: 91,
     text: '僕が訪れた国の中では一番日本人の味覚に近い感じがしました。パクチーが苦手な人は克服してから行った方がいいです。カンクンもいいですが、南に行くとあるのプラヤデルカルメンもローカル感があっていいです。',
   },
   {
     id: 'Caribe',
     name: 'ジャマイカ',
-    recommend: 10,
+    recommend: 16,
     text: 'レゲエが好きなら。お金をもって現地人となるべく避けた旅行なら行ってもいいかと。デボンアイスは世界で一番美味しいアイスです（僕調べです）。',
   },
   {
     id: 'Caribe',
     name: 'セントマーティン',
-    recommend: 40,
+    recommend: 67,
     text: '有名な飛行機の発着陸以外見るものがないです。宿もケチらないで高級ホテルに泊まらないとビーチに辿り着くのにえらい時間がかかります。',
+  },
+  {
+    id: 'Caribe',
+    name: 'アンギラ',
+    recommend: 87,
+    text: 'セントマーチンから船で行けます。基本は高級リゾートなんですが、ギチギチに詰まってないのでゆっくりした時間を過ごせます。',
   },
   {
     id: 'Caribe',
@@ -62,32 +74,56 @@ const countryList = [
   {
     id: 'South America',
     name: 'コロンビア',
-    recommend: 50,
+    recommend: 51,
     text: 'トータルで1年以上滞在しました。たまたま友達が出来たのでいましたが、あまり治安もよくないし観光では微妙です。',
   },
   {
     id: 'South America',
     name: 'ペルー',
-    recommend: 50,
+    recommend: 59,
     text: '少し小高いレストランに行けばご飯が美味しいです。マチュピチュやクスコに行ってないのですが、次にペルーに行っても首都のリマを歩き回ってる気がします。',
   },
   {
     id: 'South America',
+    name: 'エクアドル',
+    recommend: 46,
+    text: '首都のキトは交通も発展しているし、コンパクトな町で生活しやすかったです。中華が美味しかったです。',
+  },
+  {
+    id: 'South America',
     name: 'チリ',
-    recommend: 50,
+    recommend: 61,
     text: '映画や小説が好きな人は面白いかもしれません。ネルーダ（詩人）の生地が記念館になってるというのを知ったので、町までは行きましたが治安があまりよろしくなく、記念館に到着せずに満足しちゃいました。',
   },
   {
     id: 'South America',
     name: 'アルゼンチン',
-    recommend: 70,
-    text: '駆け足で見たので、ブエノスアイレスに数週間でも滞在してみたいです。治安はよくはないですしゴミもめっちゃ落ちてました。それでも、なぜか綺麗な感じのする不思議な町でした。また行ってみたいです。',
+    recommend: 78,
+    text: '駆け足で見たので、ブエノスアイレスに数週間でも滞在してみたいです。治安はよくはないですしゴミもめっちゃ落ちてました。それでも、なぜか綺麗な感じのする不思議な町で、また行ってみたいです。',
   },
   {
     id: 'Asia',
     name: 'インドネシア',
-    recommend: 80,
+    recommend: 75,
     text: 'バリしか行った事ないです。バリは高級ホテルが密集してる所以外は面白かったです。ご飯も美味しいです。可能ならバイクを借りた方が渋滞にはまらないです。',
+  },
+  {
+    id: 'Asia',
+    name: 'レバノン',
+    recommend: 83,
+    text: '中東のパリは名前負けしないです。綺麗な町とアラブ特有の猥雑さが交じり合った独特な街並みをしています。いい感じの雰囲気です。',
+  },
+  {
+    id: 'Asia',
+    name: 'イスラエル',
+    recommend: 81,
+    text: '予想外の国の一つです。戦争のイメージとは治安も空気感も優しい感じです。パレスチナ系以外は。。。',
+  },
+  {
+    id: 'Asia',
+    name: 'ドバイ',
+    recommend: 75,
+    text: '世界の話題の店や物が集まってます。個人的にはあまり面白くなかったですが、好きな人は好きかもしれません。アブダビになりますがフェラーリランドのジェットコースターは乗る価値ありです。',
   },
 ];
 
@@ -309,7 +345,6 @@ const SearchArea = ({ listCatArr, listRecoArr, filterText, handleChangeCountry, 
 
 const Table = () => {
   const lists = useContext(list);
-
   const [filterText, setFilterText] = useState('');
   const [selectId, setSelectId] = useState('');
   const [selectRec, setSelectRec] = useState('');
@@ -317,7 +352,7 @@ const Table = () => {
     return value.id
   })
   let listidArr = [...new Set(listid)];
-  let listRecoArr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  let listRecoArr = [50, 60, 70, 80, 90, 100];
 
   const handleChangeCountry = (event) => {
     let boxes = document.getElementsByClassName('items_box');
