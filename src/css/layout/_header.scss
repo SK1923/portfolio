@@ -33,6 +33,7 @@
     height: 100vh;
     background-color: global.$color-black;
     transition: all .5s linear;
+      transition-delay: .5s;
 
     &.active {
       transform: translate(0);

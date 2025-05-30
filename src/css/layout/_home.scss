@@ -10,6 +10,7 @@
   max-width: map.get(global.$mq-breakpoints, xlarge);
   &_box {
     position: relative;
+    overflow: hidden;
     &-text {
       display: inline-block;
       position: absolute;
@@ -19,6 +20,7 @@
     }
     &-img {
       width: 100%;
+      height: auto;
       position: absolute;
       top: 42%;
       left: 40%;
@@ -72,6 +74,7 @@
 
     img {
       @include global.imgBlock();
+      height: auto;
     }
 
     &::after {
