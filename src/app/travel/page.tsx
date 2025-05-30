@@ -2,7 +2,7 @@
 
 import React, { useContext, useState, useEffect } from 'react';
 import { list, reccomendPoint, CountryItem } from '../../context/ListContext';
-import '../../css/layout/_work.scss';
+import '../../css/layout/_travel.scss';
 
 const countryList: CountryItem[] = [
   {
@@ -348,7 +348,7 @@ const Table = () => {
   };
 
   return (
-    <div className='work_wrap'>
+    <div className='travel_wrap'>
       <SearchArea
         listCatArr={listidArr}
         handleChangeSelect={handleChangeSelect}
@@ -364,12 +364,12 @@ const Table = () => {
   );
 };
 
-const Work = () => {
+const Travel = () => {
   return (
-    <section className='work'>
+    <section className='travel'>
       <div className='inner'>
-        <h2 className='work_ttl'>Work</h2>
-        <p className='work_subttl'>昔、海外を回ってたころのヒストリーを一覧にしてみました。</p>
+        <h2 className='travel_ttl'>Travel</h2>
+        <p className='travel_subttl'>昔、海外を回ってたころのヒストリーを一覧にしてみました。</p>
         <list.Provider value={countryList}>
           <Table />
         </list.Provider>
@@ -378,4 +378,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Travel;

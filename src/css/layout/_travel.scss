@@ -4,7 +4,7 @@
 
 @use '../global';
 
-.work {
+.travel {
   padding: calc(#{global.x-calc-percent(60px)} + 28px) 0 0;
   max-width: map.get(global.$mq-breakpoints, xlarge);
   margin: 0 auto;

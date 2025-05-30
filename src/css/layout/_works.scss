@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+@use "sass:map";
+
+@use '../global';
+
+.works {
+  padding: calc(#{global.x-calc-percent(60px)} + 28px) 0 0;
+  max-width: map.get(global.$mq-breakpoints, xlarge);
+  margin: 0 auto;
+
+  @include global.mq(medium, min, true) {
+    padding: global.x-calc-percent(60px) 0 0;
+  }
+
+  &_subttl {
+    margin: global.x-calc-percent(20px) 0 0;
+  }
+
+  .inner {
+    padding-bottom: global.x-calc-percent(80px);
+  }
+
+  &_box {
+    width: 100%;
+    margin: global.x-calc-percent(20px) 0;
+    word-wrap: break-word;
+
+    &_company {
+      $font: 20px;
+      @include global.resFont(18px, $font );
+      @include global.font-resProperty($font, 20px, 700, 100);
+    }
+
+    &_intro {
+      margin: global.x-calc-percent(8px) 0 0;
+      $font: 16px;
+      @include global.resFont(14px, $font );
+      @include global.font-resProperty($font, 16px, 400, 100);
+    }
+
+    @include global.mq(medium, max, true) {
+      padding: global.x-calc-percent(40px) 0 0;
+
+      &_company {
+        line-height: 1.4;
+      }
+
+      &_intro {
+        margin: global.x-calc-percent(16px) 0 0;
+      }
+    }
+  }
+
+  &_list {
+    margin: global.x-calc-percent(16px) 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(5, auto);
+    gap: 28px;
+
+    @include global.mq(medium, max, true) {
+      margin: global.x-calc-percent(60px) 0 0;
+    }
+  }
+
+  &_item {
+    width: 100%;
+    line-height: 1.4;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    gap: 0;
+    word-break: break-word;
+
+    &_ttl {
+      $font: 18px;
+      @include global.resFont(16px, $font );
+      @include global.font-resProperty($font, 18px, 700, 100);
+      grid-row: 1;
+    }
+
+    &_term {
+      margin: global.x-calc-percent(16px) 0 0;
+      grid-row: 2;
+      $font: 16px;
+      @include global.resFont(14px, $font );
+      @include global.font-resProperty($font, 16px, 400, 100);
+    }
+
+    &_team {
+      margin: global.x-calc-percent(8px) 0 0;
+      grid-row: 3;
+      $font: 16px;
+      @include global.resFont(14px, $font );
+      @include global.font-resProperty($font, 16px, 400, 100);
+    }
+
+    &_url {
+      margin: global.x-calc-percent(8px) 0 0;
+      grid-row: 4;
+      $font: 16px;
+      @include global.resFont(14px, $font );
+      @include global.font-resProperty($font, 16px, 400, 100);
+    }
+
+    &_point {
+      margin: global.x-calc-percent(8px) 0 0;
+      text-align: justify;
+      grid-row: 5;
+      align-self: start;
+      $font: 16px;
+      @include global.resFont(14px, $font );
+      @include global.font-resProperty($font, 20px, 400, 100);
+    }
+  }
+}

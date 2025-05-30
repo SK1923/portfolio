@@ -55,7 +55,7 @@ function Header() {
         </div>
         <nav className="header_nav" ref={navRef}>
           <ul className="header_list">
-            {['/', '/about', '/profile', '/travel'].map((path, i) => (
+            {['/', '/about', '/profile', '/works', '/travel'].map((path, i) => (
               <li
                 key={path}
                 className="header_item"
