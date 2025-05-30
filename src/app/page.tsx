@@ -21,7 +21,7 @@ export default function Home() {
     <section className={`home home_box${isShow ? ' show' : ''}`}>
       <div className="home_box-text">
         <h2 className="home_ttl">WELCOME TO</h2>
-        <p className="home_text">I am Kei Sugiura</p>
+        <p className="home_text">I am Xxx Xxxxxxxx</p>
         <p className="home_text">I am still on the way...</p>
       </div>
       <div className="home_box-img">
